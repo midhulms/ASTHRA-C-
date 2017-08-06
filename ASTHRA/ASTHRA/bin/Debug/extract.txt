@@ -1,0 +1,248 @@
+<html>
+<head>
+<title>login page</title>
+</head>
+<body bgcolor="black" style="color:gray">
+<form action="index.php" method=get>
+<h1 align="center" style="color:gray" >Welcome to this simple application</h1>
+<?php
+session_start();
+if($_SESSION["logged"])
+{
+print_secure_content();
+}
+else {
+if(!$_SESSION["logging"])
+{
+$_SESSION["logging"]=true;
+loginform();
+}
+else if($_SESSION["logging"])
+{
+$number_of_rows=checkpass();
+if($number_of_rows==1)
+{
+$_SESSION[user]=$_GET[userlogin];
+$_SESSION[logged]=true;
+print"<h1>you have loged in successfully</h1>";
+print_secure_content();
+}
+else{
+print "wrong pawssword or username, please try again";
+loginform();
+}
+}
+}
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+B. The logout page:
+If the user wishes to logout, we clear the session variables this can be easily done by making him open this php page �logout.php�
+ 
+<?php
+session_start();
+if(session_destroy())
+{
+print"<h2>you have logged out successfully</h2>";
+print "<h3><a href='index.php'>back to main page</a></h3>";
+}
+?>
+ 
+What we did here is starting the session and destroying it, if it was cleared successfully we display that to the user
+
+c. Registration form:
+A simple html page that lets the use enters the name and passwords and submit it to the serve on the page �register.php�
+ 
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>register</title>
+</head>
+<body bgcolor="black" style="color:white;">
+<FORM ACTION="register.php" METHOD=get>
+<h1>welcome to the registration page</h1>
+please input the registration details to create an account here<br>
+<table border="2">
+<tr>
+<td>User Name :</td><td><input name="regname" type="text" size"20"></input></td>
+</tr>
+<tr>
+<td>email :</td><td><input name="regemail" type="text" size"20"></input></td>
+</tr>
+<tr>
+<td>password :</td><td><input name="regpass1" type="password" size"20"></input></td>
+</tr>
+<tr>
+<td>retype password :</td><td><input name="regpass2" type="password" size"20"></input></td>
+</tr>
+</table>
+<input type="submit" value="register me!"></input>
+</FORM>
+</body>
+</html>
+ 
+Note: you can add some JavaScript to validate the code before submitting, but I didn�t want to make this tutorial long and boring
+
+d. register php page:
+This PHP script checks the data that the user have entered in the �registrationfor.php� and inserts it into the database (simple, huh?).
+ 
+<?php
+if($_GET["regname"] && $_GET["regemail"] && $_GET["regpass1"] && $_GET["regpass2"] )
+{
+if($_GET["regpass1"]==$_GET["regpass2"])
+{
+$servername="localhost";
+$username="root";
+$conn= mysql_connect($servername,$username)or die(mysql_error());
+mysql_select_db("test",$conn);
+$sql="insert into users (name,email,password)values('$_GET[regname]','$_GET[regemail]','$_GET[regpass1]')";
+$result=mysql_query($sql,$conn) or die(mysql_error());
+print "<h1>you have registered sucessfully</h1>";
+
+print "<a href='index.php'>go to login page</a>";
+}
+else print "passwords doesnt match";
+}
+else print"invaild data";
+?>
+
+ 
+The first line checks if all the variables in the get isn�t null then it checks if the two password fields match, if yes it connects to the server, selects the database and runs the sql insert statement, which is:
+ 
+$sql="insert into users (name,email,password)values('$_GET[regname]','$_GET[regemail]','$_GET[regpass1]')";
+ 
+No explanation needed
+
+Important Notes:
+1.you can use this code to check the available variables and its values in your session or any other global variables
+ 
+foreach ($_SESSION as $key=>$value) {
+print "\$_ SESSION [\"$key\"] == $value<br>";}
+
+ 
+2.its wise to check if a session variable exists before using it this can be done using this code:
+ 
+if(isset($_SESSION['variable_name'])) print �it exists�;
+else print �it doesn�t�;
+
+ 
+3.you can hide the values of your form submits by using the POST method of your forms
+
+
+That�s all, I hope that you find this tutorial helpful and don�t hesitate to ask or comment here.
+
+All the files above are attached in this thread
+Attached Thumbnails
+successful login.JPG
+Attached Files
+Attached File  registerform.php   826bytes   30765 downloads   Attached File  logout.php   169bytes   26127 downloads Attached File  register.php   730bytes   29427 downloads   Attached File  index.php   1.85KB   31710 downloads
+
+Edited by Roger, 29 September 2014 - 04:33 PM. 
+links
+22
+yo homie i heard you like one-line codes so i put a one line code that evals a decrypted one line code that prints "i love one line codes"
+eval(base64_decode("cHJpbnQgJ2kgbG92ZSBvbmUtbGluZSBjb2Rlcyc7"));www.amrosama.com | the unholy methods of javascript
+#2  Creating login/registration forms with PHP: post #2 Guest_Jordan_*
+
+Guest
+Posted 31 December 2008 - 07:52 AM
+Very nicely done and formatted! +rep
+I believe it will be the last tutorial of 2008 :). 
+0
+#3  Creating login/registration forms with PHP: post #3 amrosama
+CC Mentor
+ 
+VIP Member
+PipPipPipPipPipPipPipPip
+2765 posts
+Posted 31 December 2008 - 07:54 AM
+good, now its your turn to keep it that way, dont aprove any tutorial till tommorow :D:D:D:D j/k 
+1
+yo homie i heard you like one-line codes so i put a one line code that evals a decrypted one line code that prints "i love one line codes"
+eval(base64_decode("cHJpbnQgJ2kgbG92ZSBvbmUtbGluZSBjb2Rlcyc7"));www.amrosama.com | the unholy methods of javascript
+#4  Creating login/registration forms with PHP: post #4 diecaster
+CC Lurker
+ 
+Just Joined
+Pip
+1 posts
+Posted 09 January 2009 - 09:15 PM
+yes... it's quite simple... thanx 
+0
+#5  Creating login/registration forms with PHP: post #5 rhoan
+CC Newcomer
+ 
+Just Joined
+PipPip
+11 posts
+Posted 10 January 2009 - 06:39 AM
+thanks for this tutorial..:) 
+0
+#6  Creating login/registration forms with PHP: post #6 amrosama
+CC Mentor
+ 
+VIP Member
+PipPipPipPipPipPipPipPip
+2765 posts
+Posted 10 January 2009 - 11:05 AM
+you are welcome 
+0
+yo homie i heard you like one-line codes so i put a one line code that evals a decrypted one line code that prints "i love one line codes"
+eval(base64_decode("cHJpbnQgJ2kgbG92ZSBvbmUtbGluZSBjb2Rlcyc7"));www.amrosama.com | the unholy methods of javascript
+#7  Creating login/registration forms with PHP: post #7 mikelbring
+CC Addict
+ 
+Advanced Member
+PipPipPipPipPip
+117 posts
+Posted 05 March 2009 - 03:28 PM
+Don't use print, its slower than echo. But nice tutorial. 
+0
+Realize the Web Web services and design.
+#8  Creating login/registration forms with PHP: post #8 amrosama
+CC Mentor
+ 
+VIP Member
+PipPipPipPipPipPipPipPip
+2765 posts
+Posted 16 March 2009 - 12:58 PM
+you are welcome 
+0
+yo homie i heard you like one-line codes so i put a one line code that evals a decrypted one line code that prints "i love one line codes"
+eval(base64_decode("cHJpbnQgJ2kgbG92ZSBvbmUtbGluZSBjb2Rlcyc7"));www.amrosama.com | the unholy methods of javascript
+#9  Creating login/registration forms with PHP: post #9 nicckk
+CC Addict
+ 
+Senior Member
+PipPipPipPipPip
+342 posts
+Posted 16 March 2009 - 02:01 PM
+Good job Amr. Wheres the +rep button? 
+0
+#10  Creating login/registration forms with PHP: post #10 dgough
+CC Lurker
+ 
+Just Joined
+Pip
+1 posts
+Posted 01 April 2009 - 08:48 AM
+Thanks 
+0
+#11  Creating login/registration forms with PHP: post #11 deckztrouze
+CC Lurker
+ 
+Just Joined
+Pip
+1 posts
+Posted 05 April 2009 - 12:11 AM
+nice tutorial, im trying it out 
+0
+#12  Creating login/registration forms with PHP: post #12 Martin_kp
+CC Regular
+ 
+Just Joined
+PipPipPip
+46 posts
+Posted 05 April 2009 - 12:27 AM
+Nice tutorial. But I changed the color to gray since some scientists say that you should keep the bgcolors white or gray, not black. They said our eyes would be damaged faster if we don't do it. 

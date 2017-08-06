@@ -1,0 +1,10 @@
+c:\users\midhul\documents\visual studio 2010\Projects\ASTHRA\ASTHRA\bin\Debug\ASTHRA.exe
+c:\users\midhul\documents\visual studio 2010\Projects\ASTHRA\ASTHRA\bin\Debug\ASTHRA.pdb
+c:\users\midhul\documents\visual studio 2010\Projects\ASTHRA\ASTHRA\obj\x86\Debug\ASTHRA.Home.resources
+c:\users\midhul\documents\visual studio 2010\Projects\ASTHRA\ASTHRA\obj\x86\Debug\ASTHRA.Properties.Resources.resources
+c:\users\midhul\documents\visual studio 2010\Projects\ASTHRA\ASTHRA\obj\x86\Debug\ASTHRA.csproj.GenerateResource.Cache
+c:\users\midhul\documents\visual studio 2010\Projects\ASTHRA\ASTHRA\obj\x86\Debug\ASTHRA.exe
+c:\users\midhul\documents\visual studio 2010\Projects\ASTHRA\ASTHRA\obj\x86\Debug\ASTHRA.pdb
+C:\Users\midhul\Documents\Visual Studio 2010\Projects\ASTHRA\ASTHRA\obj\x86\Debug\ASTHRA.csprojResolveAssemblyReference.cache
+C:\Users\midhul\Documents\Visual Studio 2010\Projects\ASTHRA\ASTHRA\obj\x86\Debug\ASTHRA.Documenthide_ASTHRA.resources
+C:\Users\midhul\Documents\Visual Studio 2010\Projects\ASTHRA\ASTHRA\obj\x86\Debug\ASTHRA.Texthide_ASTHRA.resources

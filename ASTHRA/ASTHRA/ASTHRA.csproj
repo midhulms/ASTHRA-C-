@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DC41F519-F673-465F-8788-872DD7AD8FD4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ASTHRA</RootNamespace>
+    <AssemblyName>ASTHRA</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon%283%29.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="aes.cs" />
+    <Compile Include="AESencrypt_ASTHRA.cs" />
+    <Compile Include="Documenthide_ASTHRA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documenthide_ASTHRA.Designer.cs">
+      <DependentUpon>Documenthide_ASTHRA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME_ASTHRA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME_ASTHRA.Designer.cs">
+      <DependentUpon>HOME_ASTHRA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="lsb_ASTHRA.cs" />
+    <Compile Include="Texthide_ASTHRA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Texthide_ASTHRA.Designer.cs">
+      <DependentUpon>Texthide_ASTHRA.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Documenthide_ASTHRA.resx">
+      <DependentUpon>Documenthide_ASTHRA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME_ASTHRA.resx">
+      <DependentUpon>HOME_ASTHRA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Texthide_ASTHRA.resx">
+      <DependentUpon>Texthide_ASTHRA.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_photo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\savetxt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer_theme_light_blue_wallpaper_hd_5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer_theme_light_blue_wallpaper_hd_17.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer-theme-light-blue-wallpaper-hd-computer-background-full-size-436550090.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cyber-security-increase-900pc-in-china-large.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\driven-it-security.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shutterstock_141456001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coollogo_com-15394187.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tools-for-data-security-data-p.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coollogo_com-22606302.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logomakr_19xLgn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tools-for-data-security-data-protection-WEB.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tools-for-data-security-data-p%281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\title205604314.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\step0005.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\step0004.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doc-flat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0r2v0ndv5p1du7ns0h3a.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doc-flat%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\txt-flat%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\step0007.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\make.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagw%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FontAwesome_f0c7%280%29_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\txt-flat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\txt-flat1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button%281%29%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hom2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5f1482_dcffae707bcb4795a80affa9396e57cc.jpg_srz_1903_931_85_22_0.50_1.20_0.00_jpg_srz.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shutterstock_239857006--tojpeg_1485867529403_x2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button123.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\123mid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1911715_10201446327055692_1244870787_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_2_.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document theme %283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hom21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doc image.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doc image - 123.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_2_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_2_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button%281%29%281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\step0008 %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\index.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\it_security_services.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon%283%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
